@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+body {
+    background-color: #548687;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Added a professional font */
+}
+
+h1 {
+    color: #ffffc7;
+    margin-top: 20px; /* Added some top margin for the title */
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7;
+    cursor: pointer; /* Added cursor pointer for clickable boxes */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.box:hover:not(:disabled) { /* Hover effect for enabled boxes */
+    background-color: #e0e0a0;
+}
+
+.box:disabled {
+    cursor: not-allowed; /* Indicate disabled state */
+}
+
+#resetBtn, #newGameBtn { /* Combined styles for both buttons */
+    height: 7vmin;
+    width: 20vmin; /* Increased width for better appearance */
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 3vmin;
+    color: #ffffc7; /* Changed text color for better contrast */
+    background-color: #b0413e; /* Changed background color */
+    cursor: pointer;
+    margin-top: 20px; /* Added margin for spacing */
+    transition: background-color 0.3s ease;
+}
+
+#resetBtn:hover, #newGameBtn:hover {
+    background-color: #8a322f; /* Darker shade on hover */
+}
+
+.msg-container {
+    height: 100vmin; /* Adjusted height to take full viewport height */
+    display: flex;
+    flex-direction: column; /* Arrange message and button vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Spacing between message and button */
+    position: absolute; /* Position over the game board */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(84, 134, 135, 0.9); /* Semi-transparent background */
+    z-index: 10; /* Ensure it's on top */
+}
+
+#msg {
+    color: #ffffc7;
+    font-size: 8vmin;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for better readability */
+}
+
+.hide {
+    display: none;
+}
